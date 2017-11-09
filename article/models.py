@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils import timezone
+from django.contrib.auth.models import User
 
 # Create your models here.
 class Article(models.Model):
@@ -22,14 +23,14 @@ class Comments(models.Model):
 
 
 
-class Author(models.Model):
-	class Meta():
-		db_table = 'Author'
-
+class Author(User):
+	pass
+'''
 	Author_First_Name = models.CharField(max_length = 60)
 	Author_Last_Name = models.CharField(max_length = 60)
-	Author_Article = models.ForeignKey(Article)
-
+	#Author_Article = models.ForeignKey(Article)
+'''
+'''
 	def get_absolute_url(self):
 		"""
         Returns the url to access a particular author instance.
@@ -41,3 +42,4 @@ class Author(models.Model):
         String for representing the Model object.
         """
 		return '%s, %s' % (self.Autohr_Last_Name, self.Author_First_Name)
+'''
